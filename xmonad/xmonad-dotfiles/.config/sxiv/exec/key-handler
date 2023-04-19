@@ -1,0 +1,13 @@
+#!/bin/sh
+
+while read file
+do
+  case "$1" in
+    "w") xwallpaper --zoom "$file";; 
+    "d") trash-put "$file" && notify-send "$file Put In Trash" ;;
+    "c") echo -n "$file" | xclip -selection clipboard && notify-send "$file Copied To Clipboard" ;;
+    "r") convert -rotate 90 "$file" "$file" ;;
+    "R") convert -rotate -90 "$file" "$file" ;;
+    "f") convert -flop "$file" "$file" ;;
+  esac 
+done

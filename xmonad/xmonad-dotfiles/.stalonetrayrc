@@ -1,0 +1,29 @@
+# This stalonetrayrc is meant to match with xmobar-single.hs. If you use both,
+# then you'll get a perfect setup on a single 4k display (3840x2160). If you
+# have dual monitors, see stalonetrayrc-dual and xmobar-dual.hs.
+
+# If you're using a single display with a different resolution, adjust the
+# geometry below using the given calculation.
+
+# 1 row of 12 icons, each 23px wide/tall. Resolution 3840x2160.
+# This icon size aligns with the size of xmobar with font "xft:monospace-8"
+# position = display_width - (num_icons * icon_size)
+# position = 3840 - (12 * 23) = 3564
+# Example: geometry 12x1+3564
+
+geometry 2x1-20+6
+max_geometry 5x1-325-10
+background "#11121D"
+icon_size 30
+decorations none
+transparent false
+dockapp_mode none
+kludges force_icons_size
+grow_gravity NE
+icon_gravity NE
+sticky true
+window_strut none
+window_type dock
+window_layer bottom
+# no_shrink false
+skip_taskbar true

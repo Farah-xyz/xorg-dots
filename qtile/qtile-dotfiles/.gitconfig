@@ -1,0 +1,5 @@
+[user]
+	name = ArchXyz
+	email = archlinux.xyz@gmail.com
+[init]
+	defaultBranch = main

@@ -1,0 +1,126 @@
+/*
+ *
+ * Author  : Aditya Shakya
+ * Mail    : adi1090x@gmail.com
+ * Github  : @adi1090x
+ * Twitter : @adi1090x
+ *
+ */
+configuration {
+	font:                      		"JetBrains Mono Bold 14";
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 			    true;
+	sidebar-mode: 				    false;
+}
+
+* {
+    background:                     #11121DFF;
+    background-alt:                 #2D142Cff;
+    foreground:                     #ffffffA6;
+    border:               		    #EE4540ff;
+    border-alt:               	    #C92A42ff;
+    selected:               	    #510A3299;
+    urgent:                         #DA4453FF;
+}
+
+* {
+    background-color:               @background;
+    text-color:                     @foreground;
+    width:                          10px;
+    height:                         10px;
+}
+window {
+    transparency:                   "real";
+    border-radius:                  20px;
+    location:                       center;
+    padding:                        10;
+    transparency:                   "real";
+    width:                          370px;
+    height:                         360px;
+    location:                       east;
+}
+prompt {
+    enabled: 						true;
+    padding:                        10px;
+	background-color: 				@background;
+	text-color: 				    @accent;
+    border:                  		0px 2px 0px 2px;
+    border-radius:                  12px;
+    border-color:                  	@accent;
+}
+textbox-prompt-colon {
+	expand: 						     false;
+	str: 							    " System ";
+	background-color: 				    @accent;
+	text-color: 					    @background;
+    padding:                            10px 10px 0px 10px;
+    border-radius:                      12px;
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    spacing:                        15px;
+    background-color:               @background;
+    text-color:                     @foreground;
+    expand:                         false;
+    border:                  	    0px;
+    border-radius:                  0px;
+    border-color:                  	@accent;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+listview {
+    columns:					    1;
+    lines:						    3;
+    spacing:                        15px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+mainbox {
+    background-color:               @background;
+    children:                       [ inputbar, listview ];
+    spacing:                        15px;
+    margin:                         40px;
+}
+element {
+    background-color:               @background-light;
+    text-color:                     @foreground;
+    orientation:                    vertical;
+    border-radius:                  20px;
+}
+element-text {
+    font:							"JetBrains Mono Bold 14";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0;
+    /* margin:                      25px 0px 65px 0px; */
+}
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @off;
+    text-color:                     @background;
+    border-radius:                  20px;
+}
+element normal.active,
+element alternate.active {
+    background-color:               @on;
+    text-color:                     @background;
+}
+element selected {
+    background-color:               @accent;
+    text-color:                     @background;
+    border:                  		0px;
+    border-radius:                  20px;
+    border-color:                  	@border;
+}
+element selected.urgent {
+    background-color:               @on;
+    text-color:                     @background;
+}
+element selected.active {
+    background-color:               @off;
+    color:                          @background;
+}
+
